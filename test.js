@@ -1,4 +1,4 @@
-game();
+//game();
 function game() {
   var End = "";
   var playerScore = 0;

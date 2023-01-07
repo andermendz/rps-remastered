@@ -135,5 +135,6 @@ function Round(playerChoice) {
     PlayerScore = 0;
     ComputerScore = 0;
     removeAllButtons();
+    
   }
 }

@@ -15,7 +15,7 @@ newRound.addEventListener("click", () => {
   playermenu.appendChild(bscissors);
   playermenu.removeChild(newRound);
 
-  result.textContent = "Wait for the Score";
+  result.textContent = "Wait for the Score, 5 Points to Win";
   result.setAttribute("style", "color: black");
 
   while (scores.lastChild) {
@@ -48,7 +48,7 @@ function Round(playerChoice) {
     const log = document.createElement("div");
     log.setAttribute("id", "log");
     log.setAttribute("style", "color:green");
-    log.textContent = "You Win";
+    log.textContent = `You Win You ${PlayerScore} - Computer ${ComputerScore}`;
     scores.appendChild(log);
   }
 
@@ -56,14 +56,14 @@ function Round(playerChoice) {
     const log = document.createElement("div");
     log.setAttribute("id", "log");
     log.setAttribute("style", "color:red");
-    log.textContent = "You Lose";
+    log.textContent = `You Lose You ${PlayerScore} - Computer ${ComputerScore}`;
     scores.appendChild(log);
   }
 
   function draft() {
     const log = document.createElement("div");
     log.setAttribute("id", "log");
-    log.textContent = "Draft";
+    log.textContent = `Draft You ${PlayerScore} - Computer ${ComputerScore}`;
     scores.appendChild(log);
   }
 
@@ -114,9 +114,9 @@ function Round(playerChoice) {
 
   result.setAttribute("style", "");
   if (PlayerScore == 5) {
-    result.setAttribute("style", "color: red");
+    result.setAttribute("style", "color: green");
     result.textContent =
-      " Player Wins Global Score is " +
+      " Player Wins Final Score is : " +
       " Player: " +
       PlayerScore +
       " Computer: " +
@@ -127,7 +127,7 @@ function Round(playerChoice) {
   } else if (ComputerScore == 5) {
     result.setAttribute("style", "color:red");
     result.textContent =
-      " Computer Wins Global Score is " +
+      " Computer Wins Final Score is : " +
       " Player: " +
       PlayerScore +
       " Computer: " +

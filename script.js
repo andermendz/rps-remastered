@@ -9,14 +9,16 @@ const buttons = document.querySelectorAll("button");
 
 const newRound = document.createElement("button");
 newRound.textContent = "New Round?";
+
 newRound.addEventListener("click", () => {
   playermenu.appendChild(brock);
   playermenu.appendChild(bpaper);
   playermenu.appendChild(bscissors);
   playermenu.removeChild(newRound);
 
-  result.textContent = "Wait for the Score, 5 Points to Win";
   result.setAttribute("style", "color: black");
+  result.textContent = "Playing --- The First to Get 5 Points Wins";
+
 
   // clean the scores from the last round
   while (scores.lastChild) {

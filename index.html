@@ -3,29 +3,23 @@
   <head>
     <title>Testing JS</title>
     <meta charset="UTF-8" />
-    <script src="./test.js" refer></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>ROCK PAPERS AND SCISSORS REMASTERED</h1>
+      <h1 id="title">ROCK, PAPERS AND SCISSORS REMASTERED</h1>
 
       <div class="menu">
-        <div class="logs">
-          <div>log 1</div>
-          <div>log 1</div>
-          <div>log 1</div>
-          <div>log 1</div>
-          <div>log 1</div>
-        </div>
+        <div class="scores"></div>
 
         <div id="playermenu">
-          <button>Rock</button>
-          <button>Paper</button>
-          <button>Scissors</button>
+          <button id="brock">Rock</button>
+          <button id="bpaper">Paper</button>
+          <button id="bscissors">Scissors</button>
         </div>
 
-        <div class="result">lose</div>
+        <div id="result">Wait for the Score</div>
       </div>
     </div>
   </body>

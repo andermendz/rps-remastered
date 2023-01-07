@@ -18,11 +18,13 @@ newRound.addEventListener("click", () => {
   result.textContent = "Wait for the Score, 5 Points to Win";
   result.setAttribute("style", "color: black");
 
+  // clean the scores from the last round
   while (scores.lastChild) {
     scores.removeChild(scores.lastChild);
   }
 });
 
+// remove all the button and ask to start a new round
 function removeAllButtons() {
   buttons.forEach((button) => {
     button.remove();
@@ -30,6 +32,7 @@ function removeAllButtons() {
   playermenu.appendChild(newRound);
 }
 
+// calls the function round with the respective Player Choice
 brock.addEventListener("click", () => {
   Round(1);
 });
@@ -42,7 +45,7 @@ bscissors.addEventListener("click", () => {
 
 var PlayerScore = 0;
 var ComputerScore = 0;
-
+// send scores to DOM result logs
 function Round(playerChoice) {
   function youWin() {
     const log = document.createElement("div");
@@ -102,6 +105,7 @@ function Round(playerChoice) {
     roundResult = 0;
   }
 
+  // call the logs and provides the winner of each round
   if (roundResult == 1) {
     PlayerScore++;
     youWin();
@@ -112,6 +116,7 @@ function Round(playerChoice) {
     draft();
   }
 
+  // adds the result 
   result.setAttribute("style", "");
   if (PlayerScore == 5) {
     result.setAttribute("style", "color: green");
@@ -135,6 +140,6 @@ function Round(playerChoice) {
     PlayerScore = 0;
     ComputerScore = 0;
     removeAllButtons();
-    
+
   }
 }
